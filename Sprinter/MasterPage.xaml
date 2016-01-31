@@ -7,19 +7,20 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Name="App">
-        <Image Stretch="UniformToFill" Source="Assets/Background.jpg"></Image>
+    <Grid Name="LayoutRoot">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="220"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="1" Stretch="UniformToFill" Source="Assets/Background.jpg"></Image>
 
         <Grid Name="MainMenu">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"></ColumnDefinition>
-                <ColumnDefinition Width="*"></ColumnDefinition>
-            </Grid.ColumnDefinitions>
+
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
-                <RowDefinition Height="100"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
+                <RowDefinition Height="80"></RowDefinition>
                 <RowDefinition Height="*"></RowDefinition>
             </Grid.RowDefinitions>
 
@@ -27,37 +28,87 @@
 
             <Button Name="ProjectName"
                     Grid.Row="0"
-                    FontSize="32"
+                    FontSize="24"
                     FontWeight="SemiLight"
                     Foreground="White"
                     HorizontalAlignment="Center"
                     Background="{x:Null}"
                     VerticalAlignment="Center"
-                    Style="{ThemeResource ButtonSprinter}">Agile Sprinter
-            </Button>
+                    Style="{ThemeResource ButtonSprinter}"
+                    Height="100"
+                    Width="220">Agile Sprinter</Button>
+            <TextBlock Foreground="White"
+                       FontSize="14"
+                       HorizontalAlignment="Center"
+                       Margin="0,70,0,0">
+                click to switch</TextBlock>
 
             <!-- First menu item -->
             <Rectangle Grid.Row="1" Fill="#0F355B" HorizontalAlignment="Left" Stretch="UniformToFill"></Rectangle>
-            <Button Grid.Row="1"
+            <TextBlock Grid.Row="1"
+                       FontSize="20"
+                       FontFamily="Assets/FontAwesome.otf#FontAwesome"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="62,3,0,0"></TextBlock>
+            <Button Name="TasksBtn"
+                    Grid.Row="1"
                     Foreground="White"
-                    FontSize="24"
+                    FontSize="20"
                     FontWeight="SemiLight"
                     Background="{x:Null}"
                     VerticalAlignment="Center"
                     HorizontalAlignment="Center"
-                    Style="{ThemeResource ButtonSprinter}">Tasks</Button>
+                    Style="{ThemeResource ButtonSprinter}"
+                    Width="220"
+                    Height="80">Tasks</Button>
 
             <!-- Second menu item -->
             <Rectangle Grid.Row="2" Fill="#0F355B" HorizontalAlignment="Left" Stretch="UniformToFill"></Rectangle>
+            <TextBlock Grid.Row="2"
+                       FontSize="20"
+                       FontFamily="Assets/FontAwesome.otf#FontAwesome"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="62,3,0,0"></TextBlock>
+            <Button Name="NotesBtn"
+                    Grid.Row="2"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="SemiLight"
+                    Background="{x:Null}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{ThemeResource ButtonSprinter}"
+                    Width="220"
+                    Height="80">Notes</Button>
 
             <!-- Third menu item -->
             <Rectangle Grid.Row="3" Fill="#0F355B" HorizontalAlignment="Left" Stretch="UniformToFill"></Rectangle>
-
+            <TextBlock Grid.Row="3"
+                       FontSize="20"
+                       FontFamily="Assets/FontAwesome.otf#FontAwesome"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       Margin="55,3,0,0"></TextBlock>
+            <Button Name="SettingsBtn"
+                    Grid.Row="3"
+                    Foreground="White"
+                    FontSize="20"
+                    FontWeight="SemiLight"
+                    Background="{x:Null}"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Style="{ThemeResource ButtonSprinter}"
+                    Height="80"
+                    Width="220"
+                    Click="SettingsBtn_Click"
+                    >Settings</Button>
+            
             <!-- Forth menu item -->
-            <Rectangle Grid.Row="4" Fill="#0F355B" HorizontalAlignment="Left" Stretch="UniformToFill"></Rectangle>
-
-
-            <Frame x:Name="frameBody" Grid.Column="1"></Frame>
+            <Rectangle Grid.Row="4" Fill="#0F355B" Stretch="UniformToFill"></Rectangle>
         </Grid>
+
+        <Frame x:Name="frameBody" Grid.Column="1"></Frame>
     </Grid>
 </Page>

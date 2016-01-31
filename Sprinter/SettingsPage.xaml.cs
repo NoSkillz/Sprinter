@@ -20,29 +20,11 @@ namespace Sprinter
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MasterPage : Page
+    public sealed partial class SettingsPage : Page
     {
-        public Frame ContentFrame
-        {
-            get
-            {
-                return this.frameBody;
-            }
-        }
-
-        public MasterPage()
+        public SettingsPage()
         {
             this.InitializeComponent();
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            base.OnNavigatedTo(e);
-        }
-
-        private void SettingsBtn_Click(object sender, RoutedEventArgs e)
-        {
-            ContentFrame.Navigate(typeof(SettingsPage));
         }
     }
 }
